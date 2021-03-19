@@ -1,14 +1,30 @@
 # comparer
 
-A new Flutter package project.
+A Dart package that helps to implement value based equality without needing to explicitly override `==`, `hashCode` and `.toString()`.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+First, we need to do add `comparer` to the dependencies of the `pubspec.yaml`
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+``` yaml
+dependencies:
+  comparer: ^1.0.0
+```
+
+Lastly, we need to extend Comparer (or ComparerList, ComparerMap)
+
+``` dart
+import 'package:comparer/comparer.dart';
+
+class Test extends ComparerList {
+  Test(this.v1, this.v2, this.v3, this.v4);
+
+  final int v1;
+  final String v2;
+  final List<Object> v3;
+  final Map<String, Object> v4;
+
+  @override
+  List<Object> get equals => [v1, v2, v3, v4];
+}
+```
