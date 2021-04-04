@@ -1,7 +1,7 @@
 import 'comparer.dart';
 
 /// {@macro comparer}
-/// 
+///
 /// For Map Objects
 abstract class ComparerMap with Comparer<Map<String, Object>> {
   @override

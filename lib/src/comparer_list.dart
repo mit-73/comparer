@@ -1,7 +1,7 @@
 import 'comparer.dart';
 
 /// {@macro comparer}
-/// 
+///
 /// For List Objects
 abstract class ComparerList with Comparer<List<Object>> {
   @override
