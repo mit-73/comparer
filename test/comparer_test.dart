@@ -4,56 +4,55 @@ import 'package:comparer/comparer.dart';
 
 void main() {
   test('Base test', () {
-    var one = TestZero(
+    final TestZero one = TestZero(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
-    var two = TestZero(
+    final TestZero two = TestZero(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
 
-    print(one);
     expect(one == two, false);
     expect(one.hashCode == two.hashCode, false);
   });
 
   test('ComparerList test', () {
-    var one = TestOne(
+    final TestOne one = TestOne(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
-    var two = TestOne(
+    final TestOne two = TestOne(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
-    print(one);
+
     expect(one == two, true);
     expect(one.hashCode == two.hashCode, true);
   });
 
   test('ComparerMap test', () {
-    var one = TestTwo(
+    final TestTwo one = TestTwo(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
-    var two = TestTwo(
+    final TestTwo two = TestTwo(
       1,
-      "2",
-      <Object>[3, "4", 5.5],
-      <String, Object>{"6": 6, "7": "7", "8": 8.8},
+      '2',
+      <Object>[3, '4', 5.5],
+      <String, Object>{'6': 6, '7': '7', '8': 8.8},
     );
-    print(one);
+
     expect(one == two, true);
     expect(one.hashCode == two.hashCode, true);
   });
@@ -77,7 +76,7 @@ class TestOne extends ComparerList {
   final Map<String, Object> v4;
 
   @override
-  List<Object> get equals => [v1, v2, v3, v4];
+  List<Object> get equals => <Object>[v1, v2, v3, v4];
 }
 
 class TestTwo extends ComparerMap {
@@ -89,10 +88,10 @@ class TestTwo extends ComparerMap {
   final Map<String, Object> v4;
 
   @override
-  Map<String, Object> get equals => {
-        "v1": v1,
-        "v2": v2,
-        "v3": v3,
-        "v4": v4,
+  Map<String, Object> get equals => <String, Object>{
+        'v1': v1,
+        'v2': v2,
+        'v3': v3,
+        'v4': v4,
       };
 }
