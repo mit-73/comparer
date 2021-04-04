@@ -8,7 +8,7 @@ First, we need to do add `comparer` to the dependencies of the `pubspec.yaml`
 
 ``` yaml
 dependencies:
-  comparer: ^1.0.0
+  comparer: ^1.0.1
 ```
 
 Lastly, we need to extend Comparer (or ComparerList, ComparerMap)

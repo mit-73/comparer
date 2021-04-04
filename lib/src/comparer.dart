@@ -23,6 +23,7 @@ mixin Comparer<T> {
   static const DeepCollectionEquality _equality = DeepCollectionEquality();
 
   /// Determines whether [list1] and [list2] are equal.
+  @protected
   bool compareLists<R>(List<R> list1, List<R> list2) {
     if (identical(list1, list2)) return true;
     if (list1 == null || list2 == null) return false;
@@ -45,6 +46,7 @@ mixin Comparer<T> {
   }
 
   /// Returns a `hashCode` for [equals].
+  @protected
   int genHash(Iterable<Object> values) {
     return _finish(values?.fold(0, _combine) ?? 0);
   }

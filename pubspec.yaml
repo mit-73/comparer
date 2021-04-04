@@ -1,9 +1,9 @@
 name: comparer
 description: A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
-version: 1.0.0
-repository: https://github.com/mit-73/Comparer
-issue_tracker: https://github.com/mit-73/Comparer/issues
-homepage: https://github.com/mit-73/Comparer
+version: 1.0.1
+repository: https://github.com/mit-73/comparer
+issue_tracker: https://github.com/mit-73/comparer/issues
+homepage: https://github.com/mit-73/comparer
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
