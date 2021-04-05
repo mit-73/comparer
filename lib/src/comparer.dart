@@ -24,7 +24,7 @@ mixin Comparer<T> {
 
   /// Determines whether [list1] and [list2] are equal.
   @protected
-  bool compareLists<R>(List<R> list1, List<R> list2) {
+  bool compareLists<R>(List<R>? list1, List<R>? list2) {
     if (identical(list1, list2)) return true;
     if (list1 == null || list2 == null) return false;
     final int length = list1.length;
@@ -47,8 +47,8 @@ mixin Comparer<T> {
 
   /// Returns a `hashCode` for [equals].
   @protected
-  int genHash(Iterable<Object> values) {
-    return _finish(values?.fold(0, _combine) ?? 0);
+  int genHash(Iterable<Object>? values) {
+    return _finish(values == null ? 0 : values.fold(0, _combine));
   }
 
   @nonVirtual
