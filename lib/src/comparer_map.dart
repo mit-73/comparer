@@ -2,20 +2,20 @@ import 'comparer.dart';
 
 /// {@macro comparer}
 ///
-/// For Map Objects
-abstract class ComparerMap with Comparer<Map<String, Object>> {
+/// For Map dynamic
+abstract class ComparerMap with Comparer<Map<String, dynamic>> {
   @override
-  Map<String, Object> get equals;
+  Map<String, dynamic> get equals;
 
   @override
-  int get hashCode => runtimeType.hashCode ^ genHash(equals.values);
+  int get hashCode => runtimeType.hashCode ^ genHash<dynamic>(equals.values);
 
   @override
   bool operator ==(Object other) =>
       (identical(this, other)) ||
       other is ComparerMap &&
           runtimeType == other.runtimeType &&
-          compareLists(other.equals.values.toList(), equals.values.toList());
+          compareLists<dynamic>(other.equals.values.toList(), equals.values.toList());
 
   @override
   String toString() => '$runtimeType(${equals.toNormalizeString()})';

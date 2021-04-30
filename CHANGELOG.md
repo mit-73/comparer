@@ -1,3 +1,7 @@
+## [2.0.1]
+
+* Dynamic for values
+
 ## [2.0.0]
 
 * Null safe migration

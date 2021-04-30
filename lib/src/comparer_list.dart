@@ -2,20 +2,20 @@ import 'comparer.dart';
 
 /// {@macro comparer}
 ///
-/// For List Objects
-abstract class ComparerList with Comparer<List<Object>> {
+/// For List dynamic
+abstract class ComparerList with Comparer<List<dynamic>> {
   @override
-  List<Object> get equals;
+  List<dynamic> get equals;
 
   @override
-  int get hashCode => runtimeType.hashCode ^ super.genHash(equals);
+  int get hashCode => runtimeType.hashCode ^ super.genHash<dynamic>(equals);
 
   @override
   bool operator ==(Object other) =>
       (identical(this, other)) ||
       other is ComparerList &&
           runtimeType == other.runtimeType &&
-          compareLists(other.equals.toList(), equals.toList());
+          compareLists<dynamic>(other.equals.toList(), equals.toList());
 
   @override
   String toString() => '$runtimeType(${equals.toNormalizeString()})';

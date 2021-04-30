@@ -47,7 +47,7 @@ mixin Comparer<T> {
 
   /// Returns a `hashCode` for [equals].
   @protected
-  int genHash(Iterable<Object>? values) {
+  int genHash<R>(Iterable<R>? values) {
     return _finish(values == null ? 0 : values.fold(0, _combine));
   }
 
